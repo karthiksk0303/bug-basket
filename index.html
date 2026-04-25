@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BUG BASKET</title>
+    <style>
+        body { background: #000; color: #0ff; font-family: 'Courier New', monospace; }
+        .market-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+        .card { border: 1px solid #0ff; padding: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>🛒 BUG BASKET | <span id="balance">100</span>$</h1>
+    <div class="market-grid" id="products"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Generate 50 products
+        const grid = document.getElementById('products');
+        for(let i=1; i<=50; i++) {
+            grid.innerHTML += `<div class="card">
+                <h3>Item #${i}</h3>
+                <p>Price: $${i*7}</p>
+                <button onclick="checkOut(${i}, 1)">Buy</button>
+            </div>`;
+        }
+    </script>
+</body>
+</html>
